@@ -3,8 +3,28 @@
 	font-weight: 700
 	text-transform: uppercase
 	color: $color-gray-light
-	background-color: $color-green-light 
+	background-color: $color-green-dark 
 	border: none
 	padding: 1.5rem 3rem
+	position: relative
+	transition: .7s
+	overflow: hidden
 	&:hover
-		background-color: $color-green-dark
+		background-color: $color-green-light
+		cursor: pointer
+	&::after 
+		content: ""
+		position: absolute
+		background: rgba(255, 255, 255, 0.5)
+		width: 4rem
+		height: 10rem
+		opacity: .9
+		filter: blur(2rem)
+		left: -7rem
+		top: -5rem
+		transform: translateX(-15px) skewX(-45deg)
+		transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1)
+	&:hover::after
+		left: 170%
+		transition: all 1.4s cubic-bezier(0.19, 1, 0.22, 1)
+		

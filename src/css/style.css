@@ -5,7 +5,7 @@
 }
 
 html {
-  font-size: 57%;
+  font-size: 62.5%;
 }
 @media only screen and (max-width: 1170px) {
   html {
@@ -45,6 +45,7 @@ body {
 
 .title-1 {
   font-size: 4.5rem;
+  margin-bottom: 3rem;
   font-weight: 700;
   color: white;
 }
@@ -74,6 +75,10 @@ body {
   color: #61A568;
 }
 
+.font-sz-19 {
+  font-size: 1.9rem;
+}
+
 .cards {
   background-color: #F5F5F5;
   grid-column: center-start/center-end;
@@ -93,6 +98,16 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-row-gap: 4.5rem;
+  transition: 0.7s;
+}
+.card:hover {
+  box-shadow: 0 0 7px 1px #000000;
+}
+.card:hover .card__img {
+  filter: brightness(1.5) saturate(70%);
+}
+.card:hover .card__title {
+  background-color: #61A568;
 }
 .card__title {
   grid-column: 1/-1;
@@ -106,11 +121,13 @@ body {
   justify-self: center;
   align-self: end;
   transform: translateY(50%);
+  transition: 0.7s;
 }
 .card__img {
   width: 100%;
   grid-column: 1/-1;
   grid-row: 1/2;
+  transition: 0.7s;
 }
 .card__svg {
   width: 2rem;
@@ -138,6 +155,11 @@ body {
   padding: 5rem 5rem 5rem 6.3rem;
   grid-template-rows: 1fr min-content minmax(10rem, min-content) 1fr;
   background: url(../img/header-bg.png) center/cover no-repeat;
+}
+@media only screen and (max-width: 1170px) {
+  .header {
+    padding: 12rem 8rem 6rem 8rem;
+  }
 }
 @media only screen and (max-width: 830px) {
   .header {
@@ -173,10 +195,19 @@ body {
   justify-self: start;
   align-self: start;
 }
+@media only screen and (max-width: 1170px) {
+  .header__info {
+    margin-bottom: 6rem;
+  }
+}
 
 .logo {
   display: block;
   margin-bottom: 8rem;
+  transition: all 0.3s;
+}
+.logo:hover {
+  transform: scale(1.05);
 }
 .logo__img {
   display: block;
@@ -250,6 +281,12 @@ body {
 }
 .gamers__img {
   width: 7rem;
+  height: 7rem;
+  transition: all 0.7s;
+}
+.gamers__img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.5) saturate(70%);
 }
 .gamers__text {
   align-self: center;
@@ -268,7 +305,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 4rem;
+  padding: 5rem;
 }
 @media only screen and (max-width: 830px) {
   .banner-text {
@@ -291,6 +328,16 @@ body {
   .banner-img {
     grid-column: 1/-1;
   }
+}
+.banner-img__img {
+  transition: all 0.5s;
+  backface-visibility: hidden;
+  filter: brightness(0.9) saturate(70%);
+}
+.banner-img__img:hover {
+  transform: scale(1.03);
+  z-index: 20;
+  filter: brightness(1.1);
 }
 .banner-img__img-1 {
   width: 100%;
@@ -423,6 +470,11 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: 0.5s;
+}
+.gallery__img:hover {
+  filter: brightness(1.7) saturate(70%);
+  box-shadow: 0 0 7px 1px #AAAAAA;
 }
 
 .footer {
@@ -450,7 +502,7 @@ body {
   display: inline-block;
 }
 .nav__link:hover {
-  color: #425844;
+  color: #61A568;
   transform: translateY(-0.3rem);
 }
 
@@ -459,12 +511,33 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   color: #F5F5F5;
-  background-color: #61A568;
+  background-color: #425844;
   border: none;
   padding: 1.5rem 3rem;
+  position: relative;
+  transition: 0.7s;
+  overflow: hidden;
 }
 .btn:hover {
-  background-color: #425844;
+  background-color: #61A568;
+  cursor: pointer;
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5);
+  width: 4rem;
+  height: 10rem;
+  opacity: 0.9;
+  filter: blur(2rem);
+  left: -7rem;
+  top: -5rem;
+  transform: translateX(-15px) skewX(-45deg);
+  transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.btn:hover::after {
+  left: 170%;
+  transition: all 1.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .mb-sm {

@@ -12,6 +12,13 @@
 	display: grid
 	grid-template-columns: repeat(2, 1fr)
 	grid-row-gap: 4.5rem
+	transition: .7s
+	&:hover
+		box-shadow: 0 0 7px 1px #000000
+	&:hover &__img
+		filter: brightness(1.5) saturate(70%)
+	&:hover &__title
+		background-color: $color-green-light
 	&__title
 		grid-column: 1 / -1
 		grid-row: 1 / 2
@@ -24,10 +31,12 @@
 		justify-self: center
 		align-self: end
 		transform: translateY(50%)
+		transition: .7s
 	&__img
 		width: 100%
 		grid-column: 1 / -1
 		grid-row: 1 / 2
+		transition: .7s
 	&__svg
 		width: 2rem
 		height: 2rem

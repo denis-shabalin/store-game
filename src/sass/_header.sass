@@ -5,6 +5,8 @@
 	padding: 5rem 5rem 5rem 6.3rem
 	grid-template-rows: 1fr min-content minmax(10rem, min-content) 1fr
 	background: url(../img/header-bg.png) center/cover no-repeat
+	@include respond(tab-land)
+		padding: 12rem 8rem 6rem 8rem
 	@include respond(tab-port) 
 		grid-column: full-start / full-end
 	&__line-text
@@ -31,10 +33,16 @@
 	&__btn
 		justify-self: start
 		align-self: start
+	&__info
+		@include respond(tab-land)
+			margin-bottom: 6rem
 
 .logo
 	display: block
 	margin-bottom: 8rem
+	transition: all .3s
+	&:hover
+		transform: scale(1.05)
 	&__img
 		display: block
 		margin: 0 auto
